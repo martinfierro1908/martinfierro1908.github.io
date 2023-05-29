@@ -1,54 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Document</title>
-</head>
-<body>
-    <h1> Bienvenidos al mejor sitio de compra y venta del mundo</h1>
-    Email: <input type="email" value="Ingrese su email" placeholder="Ingrese su email"><br>
-    Password: <input type="password" value="Ingrese su email" placeholder="Ingrese su contraseña"><br>
-    <input type="submit" value="Registrar">
+    <title>Sing up 1</title>
+  </head>
+  <body>
+    <h1>Bienvenidos a mi sitio web</h1>
+    Email:
+    <input
+      type="email"
+      value="Ingrese su email"
+      placeholder="Ingrese su email"
+    /><br />
+    Password:
+    <input
+      type="password"
+      value="Ingrese su email"
+      placeholder="Ingrese su contraseña"
+    /><br />
+    <input type="submit" value="Registrar" />
 
-    
     <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-          apiKey: "AIzaSyA6eehqAGruUEhQopReBgM9GnqaXsyX7GI",
-          authDomain: "otakupet-e980f.firebaseapp.com",
-          projectId: "otakupet-e980f",
-          storageBucket: "otakupet-e980f.appspot.com",
-          messagingSenderId: "933058716445",
-          appId: "1:933058716445:web:c4664d197abc598a90f7f4"
-        };
-      
-        // Initialize Firebase
-        const email = "hernan.velin@epn.edu.ec"
-        const password = "123456"
-        const app = initializeApp(firebaseConfig);
-        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
 
-        const auth = getAuth();
-        createUserWithEmailAndPassword(auth, email, password)
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyCe8CNwGlhn8aWdVakO2tVZ4Y6ik8MuY-8",
+        authDomain: "registro-usuarios-755b8.firebaseapp.com",
+        projectId: "registro-usuarios-755b8",
+        storageBucket: "registro-usuarios-755b8.appspot.com",
+        messagingSenderId: "790842711031",
+        appId: "1:790842711031:web:3fc4709af747565a6a6cf2",
+        measurementId: "G-JGB8C6BXG1",
+      };
+      const email = "martin@epn.edu.ec";
+      const password = "12345678";
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      import {getAuth, createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+
+      const auth = getAuth();
+      createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            // Signed in
-            const user = userCredential.user;
-            // ...
+          // Signed in
+          const user = userCredential.user;
+          console.log(user);
+          // ...
         })
         .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            // ..
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorCode, errorMessage); // ..
         });
-
-      </script>
-</body>
+    </script>
+  </body>
 </html>
